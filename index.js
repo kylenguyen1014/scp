@@ -15,7 +15,7 @@ const weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast'
 app.post('/', async (req, res) => {
     try {
         const {zipCode} = req.body
-        const resp = await axios.get(`${weatherUrl}?zip=${zipCode},us&appid=${apiKey}`)
+        const resp = await axios.get(`${weatherUrl}?zip=${zipCode},us&units=imperial&appid=${apiKey}`)
         const temps = resp.data.list.map(day => day.main.temp)
         res.json({mean: getMean(temps), median: getMedian(temps), mode: getMode(temps), city: resp.data.city.name})
     } catch (error) {
