@@ -12,7 +12,7 @@ const getMedian = (arrNumbers) => {
       return
     }
     const sortedNumbers = [...arrNumbers].sort((a, b) => a - b)
-    return sortedNumbers.length % 2 === 0 ? ((sortedNumbers[sortedNumbers.length / 2] + sortedNumbers[sortedNumbers.length / 2 - 1]) / 2).toFixed(2) : (sortedNumbers[(sortedNumbers.length - 1) / 2).toFixed(2)]
+    return sortedNumbers.length % 2 === 0 ? ((sortedNumbers[sortedNumbers.length / 2] + sortedNumbers[sortedNumbers.length / 2 - 1]) / 2).toFixed(2) : sortedNumbers[(sortedNumbers.length - 1) / 2].toFixed(2)
 }
 
 const getMode = (arrNumbers) => {
