@@ -15,7 +15,7 @@ app.post('/', async (req, res) => {
         const {zipCode} = req.body
         const resp = await axios.get(`${weatherUrl}?zip=${zipCode},us&appid=${apiKey}`)
         const temps = resp.data.list.map(day => day.main.temp)
-        res.json({mean: getMean(temps), median: getMedian(temps), mode: getMode(temps)})
+        res.json({mean: getMean(temps), median: getMedian(temps), mode: getMode(temps), city: resp.data.city.name})
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
