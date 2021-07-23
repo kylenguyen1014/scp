@@ -7,7 +7,7 @@ app.use(express.json())
 
 const port = 8080
 
-const apiKey = 'e8177dd9646b70f732474c8c4469f10d'
+const apiKey = process.env.APIKEY
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast'
 
 app.post('/', async (req, res) => {
