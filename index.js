@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
-const port = 8080
+const port = process.env.NODE_ENV !== "production" ? 8080 : 80
 
 const apiKey = process.env.APIKEY
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast'
