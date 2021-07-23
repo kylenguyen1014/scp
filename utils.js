@@ -3,7 +3,7 @@ const getMean = (arrNumbers) => {
       console.log('Array contains no element. No mean in the list.')
       return undefined
     }
-    return arrNumbers.reduce((acc, curr) => acc + curr, 0) / arrNumbers.length
+    return (arrNumbers.reduce((acc, curr) => acc + curr, 0) / arrNumbers.length).toFixed(2)
 }
 
 const getMedian = (arrNumbers) => {
@@ -12,7 +12,7 @@ const getMedian = (arrNumbers) => {
       return
     }
     const sortedNumbers = [...arrNumbers].sort((a, b) => a - b)
-    return sortedNumbers.length % 2 === 0 ? ((sortedNumbers[sortedNumbers.length / 2] + sortedNumbers[sortedNumbers.length / 2 - 1]) / 2) : sortedNumbers[(sortedNumbers.length - 1) / 2]
+    return sortedNumbers.length % 2 === 0 ? ((sortedNumbers[sortedNumbers.length / 2] + sortedNumbers[sortedNumbers.length / 2 - 1]) / 2).toFixed(2) : (sortedNumbers[(sortedNumbers.length - 1) / 2).toFixed(2)]
 }
 
 const getMode = (arrNumbers) => {
