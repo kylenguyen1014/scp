@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
-const port = process.env.NODE_ENV !== "production" ? 8080 : 80
+const port = process.env.PORT || "8080"
 
 const apiKey = process.env.APIKEY
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast'
@@ -22,4 +22,4 @@ app.post('/', async (req, res) => {
     }
 })
 
-app.listen(port, () => console.log(`App is running on port ${port}`))
+app.listen(port, process.env.IP, () => console.log(`App is running on port ${port}`))
